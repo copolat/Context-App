@@ -1,14 +1,14 @@
 import React from 'react';
 
 class TodoList extends React.Component {
-  render(){
+  render() {
     return (
       <div className='todolist'>
         <input type="text"/>
         <ul>
-          <li>Go to market</li>
-          <li>Buy some milk</li>
-          <li>Pay bills</li>
+          <li>Go to the market</li>
+          <li>Get some milk</li>
+          <li>Pay the bills</li>
         </ul>
       </div>
     )
