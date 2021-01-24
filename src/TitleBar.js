@@ -3,8 +3,10 @@ import React from 'react';
 class TitleBar extends React.Component {
   render(){
     return (
-      <div>
-        <h1>To-Do App</h1>
+      <div className='title-bar'>
+        <div className='branding'>To-Do App</div>
+        <div className=''></div>
+        <i className='fas fa-moon'/>
       </div>
     )
   }

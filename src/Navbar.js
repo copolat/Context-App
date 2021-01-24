@@ -3,8 +3,13 @@ import React from 'react';
 class Navbar extends React.Component {
   render(){
     return (
-      <div>
-        <h1>This is NAV-BAR</h1>
+      <div className='nav'>
+        <ul>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>LOGIN</li>
+        </ul>
+        
       </div>
     )
   }
