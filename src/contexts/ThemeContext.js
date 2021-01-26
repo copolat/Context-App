@@ -3,9 +3,7 @@ import React, {Component, createContext} from 'react';
 export const ThemeContext = createContext();
 
 class ThemeContextProvider extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       isLightTheme: true,
       lightTheme: {
         text: '#000',
@@ -15,15 +13,28 @@ class ThemeContextProvider extends Component {
       },
       darkTheme: {
         text: '#FFF',
-        titleBar: '#4F5B62',
-        nav: '#37474F' ,
+        titleBar: '#4f5b62',
+        nav: '#37474f' ,
         body: '#263238'
-      }
+      },
+      isLoggedIn: false
     }
-  }
+
+    switchTheme = () => {
+      this.setState({
+        isLightTheme: !this.state.isLightTheme
+      })
+    }
+
+    switchLogin = () => {
+      this.setState({
+        isLoggedIn: !this.state.isLoggedIn
+      })
+    }
+
   render() {
     return(
-      <ThemeContext.Provider value={this.state}>
+      <ThemeContext.Provider value={{...this.state, toggleTheme: this.switchTheme, switchLogin: this.switchLogin}}>
         {this.props.children}
       </ThemeContext.Provider>
     )
