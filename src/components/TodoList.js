@@ -1,10 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {ThemeContext} from '../contexts/ThemeContext';
 
-class TodoList extends React.Component {
-  static contextType = ThemeContext;
-  render() {
-    const {isLightTheme, lightTheme, darkTheme} = this.context;
+function TodoList() {
+    const {isLightTheme, lightTheme, darkTheme} = useContext(ThemeContext);;
     const theme = isLightTheme ? lightTheme : darkTheme
     return (
       <div className='todolist' style={{backgroundColor:theme.body, color: theme.text}}>
@@ -16,7 +14,6 @@ class TodoList extends React.Component {
         </ul>
       </div>
     )
-  }
 }
 
 export default TodoList;
