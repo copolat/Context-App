@@ -17,7 +17,6 @@ class ThemeContextProvider extends Component {
         nav: '#37474f' ,
         body: '#263238'
       },
-      isLoggedIn: false
     }
 
     switchTheme = () => {
@@ -26,15 +25,11 @@ class ThemeContextProvider extends Component {
       })
     }
 
-    switchLogin = () => {
-      this.setState({
-        isLoggedIn: !this.state.isLoggedIn
-      })
-    }
+
 
   render() {
     return(
-      <ThemeContext.Provider value={{...this.state, toggleTheme: this.switchTheme, switchLogin: this.switchLogin}}>
+      <ThemeContext.Provider value={{...this.state, toggleTheme: this.switchTheme}}>
         {this.props.children}
       </ThemeContext.Provider>
     )
