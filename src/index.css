@@ -76,3 +76,8 @@ code {
   justify-content: space-between;
   flex-direction: row-reverse;
 }
+
+.todolist li:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
